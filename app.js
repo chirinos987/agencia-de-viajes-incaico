@@ -1,9 +1,18 @@
 var express = require('express');
 var path = require('path');
 
+var logger = require('morgan');
+
+
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'mitarea')));
+// view engine setup
+app.set('/', path.join(__dirname, './index.html'));
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
 
 
 
